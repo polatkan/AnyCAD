@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shadeWithEdgeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.edgeWithPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.primitiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sphereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,9 +44,9 @@
             this.featureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extrudeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel3d = new System.Windows.Forms.Panel();
-            this.timerDraw = new System.Windows.Forms.Timer(this.components);
+            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +54,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.primitiveToolStripMenuItem,
             this.featureToolStripMenuItem,
             this.clearToolStripMenuItem});
@@ -79,9 +83,40 @@
             // sTLToolStripMenuItem
             // 
             this.sTLToolStripMenuItem.Name = "sTLToolStripMenuItem";
-            this.sTLToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
-            this.sTLToolStripMenuItem.Text = "STL";
+            this.sTLToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.sTLToolStripMenuItem.Text = "STEP/IGES/STL";
             this.sTLToolStripMenuItem.Click += new System.EventHandler(this.sTLToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shadeToolStripMenuItem,
+            this.shadeWithEdgeToolStripMenuItem,
+            this.edgeWithPointsToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // shadeToolStripMenuItem
+            // 
+            this.shadeToolStripMenuItem.Name = "shadeToolStripMenuItem";
+            this.shadeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.shadeToolStripMenuItem.Text = "Shade";
+            this.shadeToolStripMenuItem.Click += new System.EventHandler(this.shadeToolStripMenuItem_Click);
+            // 
+            // shadeWithEdgeToolStripMenuItem
+            // 
+            this.shadeWithEdgeToolStripMenuItem.Name = "shadeWithEdgeToolStripMenuItem";
+            this.shadeWithEdgeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.shadeWithEdgeToolStripMenuItem.Text = "Shade with edge";
+            this.shadeWithEdgeToolStripMenuItem.Click += new System.EventHandler(this.shadeWithEdgeToolStripMenuItem_Click);
+            // 
+            // edgeWithPointsToolStripMenuItem
+            // 
+            this.edgeWithPointsToolStripMenuItem.Name = "edgeWithPointsToolStripMenuItem";
+            this.edgeWithPointsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.edgeWithPointsToolStripMenuItem.Text = "Edge with points";
+            this.edgeWithPointsToolStripMenuItem.Click += new System.EventHandler(this.edgeWithPointsToolStripMenuItem_Click);
             // 
             // primitiveToolStripMenuItem
             // 
@@ -89,7 +124,8 @@
             this.sphereToolStripMenuItem,
             this.boxToolStripMenuItem,
             this.cylinderToolStripMenuItem,
-            this.coneToolStripMenuItem});
+            this.coneToolStripMenuItem,
+            this.customToolStripMenuItem});
             this.primitiveToolStripMenuItem.Name = "primitiveToolStripMenuItem";
             this.primitiveToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.primitiveToolStripMenuItem.Text = "Primitive";
@@ -97,28 +133,28 @@
             // sphereToolStripMenuItem
             // 
             this.sphereToolStripMenuItem.Name = "sphereToolStripMenuItem";
-            this.sphereToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.sphereToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sphereToolStripMenuItem.Text = "Sphere";
             this.sphereToolStripMenuItem.Click += new System.EventHandler(this.sphereToolStripMenuItem_Click);
             // 
             // boxToolStripMenuItem
             // 
             this.boxToolStripMenuItem.Name = "boxToolStripMenuItem";
-            this.boxToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.boxToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.boxToolStripMenuItem.Text = "Box";
             this.boxToolStripMenuItem.Click += new System.EventHandler(this.boxToolStripMenuItem_Click);
             // 
             // cylinderToolStripMenuItem
             // 
             this.cylinderToolStripMenuItem.Name = "cylinderToolStripMenuItem";
-            this.cylinderToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.cylinderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cylinderToolStripMenuItem.Text = "Cylinder";
             this.cylinderToolStripMenuItem.Click += new System.EventHandler(this.cylinderToolStripMenuItem_Click);
             // 
             // coneToolStripMenuItem
             // 
             this.coneToolStripMenuItem.Name = "coneToolStripMenuItem";
-            this.coneToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.coneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.coneToolStripMenuItem.Text = "Cone";
             this.coneToolStripMenuItem.Click += new System.EventHandler(this.coneToolStripMenuItem_Click);
             // 
@@ -126,7 +162,8 @@
             // 
             this.featureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.extrudeToolStripMenuItem,
-            this.revoleToolStripMenuItem});
+            this.revoleToolStripMenuItem,
+            this.splitToolStripMenuItem});
             this.featureToolStripMenuItem.Name = "featureToolStripMenuItem";
             this.featureToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.featureToolStripMenuItem.Text = "Feature";
@@ -145,6 +182,13 @@
             this.revoleToolStripMenuItem.Text = "Revole";
             this.revoleToolStripMenuItem.Click += new System.EventHandler(this.revoleToolStripMenuItem_Click);
             // 
+            // splitToolStripMenuItem
+            // 
+            this.splitToolStripMenuItem.Name = "splitToolStripMenuItem";
+            this.splitToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.splitToolStripMenuItem.Text = "Split";
+            this.splitToolStripMenuItem.Click += new System.EventHandler(this.splitToolStripMenuItem_Click);
+            // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
@@ -152,32 +196,22 @@
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
-            // panel3d
+            // customToolStripMenuItem
             // 
-            this.panel3d.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3d.Location = new System.Drawing.Point(0, 24);
-            this.panel3d.Name = "panel3d";
-            this.panel3d.Size = new System.Drawing.Size(601, 429);
-            this.panel3d.TabIndex = 1;
-            this.panel3d.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3d_Paint);
-            this.panel3d.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pane3d_MouseDown);
-            this.panel3d.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Pane3d_MouseMove);
-            this.panel3d.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pane3d_MouseUp);
-            // 
-            // timerDraw
-            // 
-            this.timerDraw.Tick += new System.EventHandler(this.timerDraw_Tick);
+            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customToolStripMenuItem.Text = "Custom";
+            this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 453);
-            this.Controls.Add(this.panel3d);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
-            this.Text = "AnyCAD.Basic";
+            this.Text = "AnyCAD.Net Lite";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.SizeChanged += new System.EventHandler(this.FormMain_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
@@ -192,8 +226,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem primitiveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sphereToolStripMenuItem;
-        private System.Windows.Forms.Panel panel3d;
-        private System.Windows.Forms.Timer timerDraw;
         private System.Windows.Forms.ToolStripMenuItem boxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cylinderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coneToolStripMenuItem;
@@ -204,6 +236,13 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sTLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shadeWithEdgeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem edgeWithPointsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem splitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
+
     }
 }
 

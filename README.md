@@ -1,11 +1,11 @@
-AnyCAD .Net SDK
+AnyCAD .Net SDK Sample Code
 =============
 
-AnyCAD.Net SDK provides easy to use API for .Net developers to create and render 3d models.
+AnyCAD.Net SDK provides powerful APIs for .Net developers to create and render 3d models.
 
-Wiki:
+Get the SDK
 -------------
-https://github.com/anycad/AnyCAD_Sample/wiki
+https://github.com/anycad/anycadnetsdkpro
 
 Sample Code
 -------------
@@ -15,12 +15,8 @@ Bug tracker:
 -------------
 https://github.com/anycad/AnyCAD_Sample/issues
 
-License:
--------------
-AnyCAD .Net SDK is free for everyone, any we also provide commercial support.
 
 Contact:
 ------------
 http://www.anycad.net
-If you want commercial support, please contact us: 
 support@anycad.net
